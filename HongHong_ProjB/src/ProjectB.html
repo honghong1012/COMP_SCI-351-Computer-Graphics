@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ProjectB</title>
+  </head>
+	<!--	Create the HTML5 'canvas' element in which we will run WebGL
+	-->
+  <!-- <body onload="main()">
+    <canvas id="webgl" width="600" height="600"> -->
+		<script>
+			function getWidth() {
+				console.log(screen.width)
+				return screen.width;
+			}
+		</script>
+	
+	  <body onload="main()" onresize="drawResize()">
+		<canvas id="webgl" width="getWidth()" height="600">
+			
+		    Please use a browser that supports "canvas"
+    </canvas>
+	<p>
+	<!-- Make a 'div' element to hold changeable HTML made in our JavaScript file;
+		 (where? look inside main(), inside its 'tick()' function, where we
+		 display the 'current angle' value.
+	-->
+	<p>Use key W A S D to move foward, left, backward, and right</p>
+	<p>Use key J K I L to look left, down, up, right</p>
+	<p>Drag the mouse around the canvas to spin the sphere</p>
+	<table>
+		<tbody><tr>
+		  <td style="text-align:center"><span id="W2_x_limits">X axis: -0.5 to 0.5</span></td>
+		  <td style="text-align:center"><span id="W2_y_limits">Y axis: -0.4 to 0.5</span></td>
+		  <td style="text-align:center"><span id="W2_z_limits">Z axis: 1.1 to 10.0</span></td>
+		</tr>
+		<tr style="font-family:Courier New, courier, monospace; font-size:10pt">
+		  <td>left :<br>-5.0 <input type="range" id="W2_left" min="-5.0" max="5.0" value="-0.5" step="0.1" style="width:150px"> 5.0 </td>
+		  <td>| bottom :<br>| -5.0 <input type="range" id="W2_bottom" min="-5.0" max="5.0" value="-0.5" step="0.1" style="width:150px"> 5.0</td>
+		  <td>| near :<br>| 0.1 <input type="range" id="W2_near" min="0.1" max="10.0" value="1.0" step="0.1" style="width:150px"> 10.0</td>
+		</tr>
+		<tr style="font-family:Courier New, courier, monospace; font-size:10pt">
+		  <td>right:<br>-5.0 <input type="range" id="W2_right" min="-5.0" max="5.0" value="0.5" step="0.1" style="width:150px"> 5.0 </td>
+		  <td>| top:<br>| -5.0 <input type="range" id="W2_top" min="-5.0" max="5.0" value="0.5" step="0.1" style="width:150px"> 5.0</td>
+		  <td>| far:<br>| 2.0 <input type="range" id="W2_far" min="2.0" max="20.0" value="10.0" step="0.1" style="width:150px"> 20.0</td>
+		</tr>
+	  </tbody></table>
+	
+    </p>
+	<!--	Load in the JavaScript libraries supplied by our textbook 
+			(Matsuda et al., 2013 WebGL Programming Guide) that help us
+			with WebGL programming:
+	-->
+    <script src="../lib/webgl-utils.js"></script>
+    <script src="../lib/webgl-debug.js"></script>
+    <script src="../lib/cuon-utils.js"></script>
+    <script src="../lib/cuon-matrix-quat03.js"></script>
+	<!--	Finally, load in our own JavaScript program file.
+	-->
+    <script src="ProjectB.js"></script>
+  </body>
+</html>

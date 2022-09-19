@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ProjC_HongHong</title>
+  </head>
+
+  <script>
+		function getHeight() {
+      console.log(screen.height)
+			return screen.height;
+    }
+    function getWidth() {
+      console.log(screen.width)
+			return screen.width;
+		}
+	</script>
+
+  <body onload="main()" onresize="drawResize()">
+    <canvas id="webgl" width="getWidth()" height="getHeight()*0.66">
+    Please use a browser that supports "canvas"
+    </canvas>
+    <p>
+      <span>1. Press "WSAD" keys or arrow keys to move and look around!</span>
+      <br>
+      <span>2. Click the button to change the material on torus:</span>
+      <button type="button" onclick="matSwitch()">materials change</button>
+      <br>
+      <span>3. Click the buttons to move the light location:</span>
+      <button type="button" onclick="lightLeft()">Light left</button>
+      <button type="button" onclick="lightRight()">Light right</button>
+      <br>
+      <span>4. Click the buttons to change the shading and light, try different combination!</span>
+      <button type="button" onclick="shadeSwitch()">Change shading</button>
+      <button type="button" onclick="lightSwitch()">Change lighting</button>
+      <br><br>
+      <span>Below is the method:</span>
+      <div style="display:inline;" id=curShade> </div>, <div style="display:inline;" id=curLight> </div> 
+    </p>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+<!-- YOU SHOULD UPGRADE to Brandon Jones' far-faster, 
+      far more complete vector/matrix/quaternion library: (Google it!)
+		<script src="../lib/glmatrix.js"></script>
+--> 
+		<script src="HH_VBObox-Lib.js"></script>
+    <script src="ProjC_HongHong.js"></script>
+    <script src="materials_Ayerdi04.js"></script>
+  </body>
+</html>

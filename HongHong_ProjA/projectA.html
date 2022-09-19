@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>projectA</title>
+  </head>
+
+  <body onload="main()">
+    <canvas id="webgl" width="600" height="600">
+    Please use a browser that supports "canvas"
+    </canvas>
+<!-- <br>(open Console, please!) -->
+<p>
+	<!-- Make a 'div' element to hold changeable HTML made in our JavaScript file;
+		 (where? look inside main(), inside its 'tick()' function, where we
+		 display the 'current angle' value.
+	-->
+	<div id= CurAngleDisplay></div> 
+	<!-- Next, make a simple block of text 
+	-->
+	<!-- New Current Angle (-180 < x < +180 deg):  -->
+	<!-- Next, make an HTML 'input' box element, a text-box 10 chars wide where users
+		can type in text.  Give it an ID name so that our JavaScript program
+		(e.g. ControlMulti.js, loaded near the end of this file) can access this
+		HTML element by name in the 'tick' function.
+		<!-- <button type="button" onClick='angleSubmit()'>Submit</button><BR>  -->
+	</p>
+	Drag mouse to rotate the objects <br>
+    	</t>Use WASD or arrow keys to move the shark around<br>
+	</t>Click mouse to change color of the shark tail<br>
+
+<hr> <!-- Draw a horizontal-line separator------------->
+	
+		<br>
+		<div id='KeyDownResult'  ></div> <!-- myKeyDown() modifies this span object -->		
+		<br>
+		<div id='KeyModResult'   > <br><br>   </div> <!-- myKeyDown() modifies this span object -->
+		<br>
+		<div id='MouseAtResult'  > </div> <!-- myMouseMove() modifies this span object -->
+		<br>
+		<div id='MouseDragResult'> </div> <!-- myMouseUp() modifies this span object -->
+
+	<!--  Mouse click/drag amounts.  Look in 'console' for event reports;
+			the 'clear' button calls Javascript function 'clearDrag()'
+			whose sole purpose is to set global vars xMdragTot,yMdragTot ==0.0
+		  Note we use these totals to rotate the triangle at upper left.
+	-->
+			<!-- <button type="button" onClick='clearDrag()'>Clear</button> -->
+    <p>
+	<!-- <input type="button" id="A0button" onclick="A0_runStop()" value="Angle 0 ON">
+      	<input type="button" id="A1button" onclick="A1_runStop()" value="Angle 1 ON">
+	<input type="button" id="A2button" onclick="A2_runStop()" value="Angle 2 ON"> -->
+	<! these commands create a push-button with labels 'Angle 0', 'Angle 1', etc.
+	When users click the button, call the function name held in 'onclick'>
+    </p>
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix-quat03.js"></script>
+    <script src="projectA.js"></script>
+  </body>
+</html>
